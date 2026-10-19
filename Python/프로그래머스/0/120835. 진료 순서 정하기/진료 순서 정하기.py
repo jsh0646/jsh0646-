@@ -1,10 +1,10 @@
 def solution(emergency):
-    lst = []
-    for x in emergency:
-        num = 1
-        for y in emergency:
-            if x < y:
-                num+=1
-        lst.append(num)
-    return lst
-        
+    sort_e = sorted(emergency, reverse = True)
+    rank = {}
+    for i,x in enumerate(sort_e, start=1):
+        rank[x]=i
+    
+    ans = []
+    for e in emergency:
+        ans.append(rank[e])
+    return ans
