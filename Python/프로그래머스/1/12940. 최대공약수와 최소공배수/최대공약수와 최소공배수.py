@@ -1,15 +1,4 @@
-def GCD(a, b):
-    while b > 0:
-        a, b = m, a % b
-    return a
-
-def LCM(a,b):
-    return a * b // GCD(a, b)
+from math import gcd, lcm
 
 def solution(n, m):
-    lcm = n * m
-    while m > 0:
-        n, m = m, n % m
-    gcd = n
-    lcm //= gcd
-    return[gcd, lcm]
+    return [gcd(n,m),lcm(n,m)]
